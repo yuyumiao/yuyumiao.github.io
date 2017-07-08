@@ -1,0 +1,822 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="博客搭建," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="哇，是真的难过，跌跌撞撞兜兜转转这么久终于把自己的hexo静态博客给搭建到服务器上了。">
+<meta name="keywords" content="博客搭建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在自己的云服务器搭建hexo静态网页">
+<meta property="og:url" content="http://120.25.197.129/2017/07/03/跌跌撞撞的博客/index.html">
+<meta property="og:site_name" content="余誉苗的个人主页">
+<meta property="og:description" content="哇，是真的难过，跌跌撞撞兜兜转转这么久终于把自己的hexo静态博客给搭建到服务器上了。">
+<meta property="og:updated_time" content="2017-07-04T06:13:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在自己的云服务器搭建hexo静态网页">
+<meta name="twitter:description" content="哇，是真的难过，跌跌撞撞兜兜转转这么久终于把自己的hexo静态博客给搭建到服务器上了。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://120.25.197.129/2017/07/03/跌跌撞撞的博客/"/>
+
+
+
+
+
+  <title>在自己的云服务器搭建hexo静态网页 | 余誉苗的个人主页</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">余誉苗的个人主页</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录成长</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://120.25.197.129/2017/07/03/跌跌撞撞的博客/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="余誉苗">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="余誉苗的个人主页">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">在自己的云服务器搭建hexo静态网页</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-03T15:19:46+08:00">
+                2017-07-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/折腾一下/" itemprop="url" rel="index">
+                    <span itemprop="name">折腾一下</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>哇，是真的难过，跌跌撞撞兜兜转转这么久终于把自己的hexo静态博客给搭建到服务器上了。<a id="more"></a><br>接下来就是过程，常记录，不忘事！！！</p>
+<blockquote>
+<p>#需要准备的东西：</p>
+</blockquote>
+<p>云服务器，我选择的是阿里云服务器ECS，2GB RAM 、1MB 网速。学生服务器，40gb硬盘，9块钱一个月，域名还在备案当中。</p>
+<p> 一台能正常上网的电脑（废话），电脑上需要安装xshell（windows），git bash（windows）或者是git（mac、ubuntu），还需要安装node.js和npm包管理程序（所有平台），都是下载安装的东西，简单的要死。不过，说个题外话。就在大概一个半月前，我的三系统（win10+macos+ubuntu）崩盘了，其实是自己手误+脑残，非要给机械盘装个win7，手误引导盘选错，把固态的引导给删了，win10和mac在固态盘，mac的引导倒没啥，这个做的很方便，win10的引导就是自带贵族气质，死活做不上去，也无法修复，气的我直接格盘，结果原来写的文章还有搭建的环境之类的都没用了，格完才意识到没备份，是真的气的吐血。这也让自己怠惰了一个月，到今天才想好好把这个博客给搭建好。hexo静态博客，当然最重要的是hexo环境，因为现在没有做mac系统，ubuntu上面虽然有写博客超级方便的remakable软件，但是ubuntu搭建hexo问题太多，虽然Windows版本的这个软件一直显示开发中，迫不得已选择了windows（其实是担心github有一天被墙，这才是把hexo托管到自己的国内服务器的原因）。</p>
+<blockquote>
+<p>##本地 Hexo 安装及初始化</p>
+</blockquote>
+<p>NPM 上还有许多 Hexo 相关的包，但是只要安装好了 hexo-cli 和 hexo-server 这两个核心组件之后，就可以让博客跑起来了。</p>
+<p>我们使用 Node.js 的包管理器 npm 安装 hexo-cli 和 hexo-server。</p>
+<p><code>npm install hexo-cli hexo-server -g</code></p>
+<p>hexo-cli 是 Hexo 的命令行工具，可用于快速新建、发布、部署博客；hexo-server 是 Hexo 的内建服务器，可用于部署前的预览和测试。-g 选项，表示全局安装。</p>
+<p>接下来，为 Hexo 博客做一些基础配置，包括创建基础文件。这步操作很简单，Hexo 提供了一个快捷命令，只需要提供一个存放文件的目录地址即可。</p>
+<p><code>hexo init ~/hexo_blog</code></p>
+<p>在国内环境下执行该命令，速度会有些慢。因为需要从 Hexo 在 Github 上的仓库克隆；仓库克隆成功后，会自动执行一系列 npm 命令，自安装依赖模块。</p>
+<p>现在你就可以试着写自己的第一篇文章了<br>在博客根目录下右键bash输入</p>
+<p><code>hexo new 我的第一篇文章</code> </p>
+<p>然后在博客根目录的source/_posts里面找到你的新建的文章“我的第一篇文章”，用记事本或者是去网上挑选你自己喜欢的工具去编写这个makedown格式的文章。</p>
+<p>编写完成后在博客根目录下输入</p>
+<p><code>hexo generate或者是hexo g #为博客生成静态网页</code></p>
+<p><code>hexo server或者是hexo s #将网页推送到本地虚拟服务器上</code></p>
+<p>然后打开网站输入<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a><br>即可浏览你的个人网站，虽然我觉得初始页面很丑<br>然后ctrl+c结束推送</p>
+<p>这样子，本地的环境就已经搭建完成了</p>
+<blockquote>
+<p>##服务器端的操作</p>
+</blockquote>
+<p>我使用的是ubuntu16.04系统，其他的linux系统应该是大同小异的，安装软件就行了</p>
+<p>服务器安装完系统之后，使用xshell（windows下）ssh连接服务器</p>
+<pre><code>sudo apt-get update
+sudo apt-get install git
+sudo apt-get install nginx
+</code></pre><p>这样子就完成了安装基本软件，软件用处自行百度吧！接下来就是对服务器托管hexo进行配置<br>在这部分，要完成以下件事情：</p>
+<blockquote>
+<p>###1、为本地的 hexo_blog 配置一个部署静态文件的远程仓库。</p>
+</blockquote>
+<p>在 /var/repo/ 下，创建一个名为 hexo_static 的裸仓库（bare repo）。</p>
+<p>如果没有 /var/repo 目录，需要先创建；然后修改目录的所有权和用户权限，之后 ubuntu 用户都具备 /var/repo 目录下所有新生成的目录和文件的权限。</p>
+<pre><code>sudo mkdir /var/repo/
+sudo chown -R $USER:$USER /var/repo/
+sudo chmod -R 755 /var/repo/
+</code></pre><p>然后，执行如下命令：</p>
+<pre><code>cd /var/repo/
+git init --bare hexo_static.git
+</code></pre><blockquote>
+<p>###2、配置 Nginx 托管博客文件目录。</p>
+</blockquote>
+<p>接下来，创建 /var/www/hexo 目录，用于 Nginx 托管。</p>
+<pre><code>sudo mkdir -p /var/www/hexo
+</code></pre><p>和上一步类似，这里也需要修改目录的所有权和权限。</p>
+<pre><code>sudo chown -R $USER:$USER /var/www/hexo
+sudo chmod -R 755 /var/www/hexo
+</code></pre><p>然后，修改 Nginx 的 default 设置：</p>
+<pre><code>sudo nano /etc/nginx/sites-available/default
+</code></pre><p>将其中的 root 指令指向 /var/www/hexo 目录。</p>
+<pre><code>...
+
+server {
+listen 80 default_server;
+listen [::]:80 default_server ipv6only=on;
+
+root /var/www/hexo; # 需要修改的部分
+index index.html index.htm;
+...
+</code></pre><p>保存并退出文件。如果以后购买并备案域名之后，可以再将配置中的 default_server 修改为你的域名。</p>
+<p>最后，重启 Nginx 服务，使得改动生效。</p>
+<pre><code>sudo service nginx restart
+</code></pre><p>做完这一步之后，你去访问服务器的 IP 时，应该还是会报错的，因为 /var/www/hexo 目录是空的。</p>
+<blockquote>
+<p>###3、配置远程仓库自动更新到博客文件目录的钩子。</p>
+</blockquote>
+<p>接下来，在服务器上的裸仓库 hexo_static 创建一个钩子，在满足特定条件时将静态 HTML 文件传送到 Web 服务器的目录下，即 /var/www/hexo。</p>
+<p>在自动生成的 hooks 目录下创建一个新的钩子文件：</p>
+<pre><code>nano /var/repo/hexo_static.git/hooks/post-receive
+</code></pre><p>在该文件中添加两行代码，指定 Git 的工作树（源代码）和 Git 目录（配置文件等）。</p>
+<pre><code>#!/bin/bash
+git --work-tree=/var/www/hexo --git-dir=/var/repo/hexo_static.git checkout -f
+</code></pre><p>保存并退出文件，并让该文件变为可执行文件。</p>
+<pre><code>chmod +x /var/repo/hexo_static.git/hooks/post-receive
+</code></pre><blockquote>
+<p>##完成本地 Hexo 配置</p>
+</blockquote>
+<p>在第三部分的操作中，我们将完成以下任务：</p>
+<blockquote>
+<p>###修改 Hexo 配置中的 URL 和默认文章版式</p>
+</blockquote>
+<p>修改 Hexo 部分默认配置</p>
+<p>进入 hexo_blog 目录后，主要有以下文件。</p>
+<pre><code>-rw-r--r-- 1 benjisong 1049089 1619 Feb 24 14:45 _config.yml
+-rw-r--r-- 1 benjisong 1049089  174 Feb 24 13:51 db.json
+drwxr-xr-x 1 benjisong 1049089    0 Feb 24 12:16 node_modules
+-rw-r--r-- 1 benjisong 1049089  484 Feb 24 12:16 package.json
+drwxr-xr-x 1 benjisong 1049089    0 Feb 24 13:50 public
+drwxr-xr-x 1 benjisong 1049089    0 Feb 24 12:08 scaffolds
+drwxr-xr-x 1 benjisong 1049089    0 Feb 24 12:13 source
+drwxr-xr-x 1 benjisong 1049089    0 Feb 24 12:08 themes
+</code></pre><p>其中，_config.yml 为 Hexo 的主配置文件。我们首先修改博客的 URL 地址。</p>
+<pre><code># URL
+## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;
+
+url: http://server-ip # 没有绑定域名时填写服务器的实际 IP 地址。
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+</code></pre><blockquote>
+<p>###配置自动部署到服务器端的 hexo_static 裸仓库</p>
+</blockquote>
+<p>通过 Git 将 Hexo 生成的静态内容推送到服务器。</p>
+<p>继续编辑 _config.yml 文件，找到 Deployment 部分，按照如下情况修改：</p>
+<pre><code>deploy:
+  type: git
+  repo: 服务器用户名@服务器的IP地址:/var/repo/hexo_static（我们刚才新建的博客的位置）
+  branch: master
+</code></pre><p>保存并退出文件。</p>
+<p>之后，需要安装一个 Hexo 包，负责将博客所需的静态内容发送到设置好的 Git 仓库。</p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre><p>安装好后可以测试部署：</p>
+<p><code>hexo generate或者是hexo g</code><br><code>hexo deploy或者是hexo d</code></p>
+<p>期间可能会提示输入 ubuntu 用户的登录密码（如果没有设置 SSH 登录）。成功之后的输出大致如下：</p>
+<pre><code>...
+create mode 100644 tags/Node-js/index.html
+create mode 100644 tags/Ubuntu/index.html
+Branch master set up to track remote branch master from     
+服务器用户名@服务器地址:/var/repo/hexo_static.
+To 服务器地址:/var/repo/hexo_static
+* [new branch]      HEAD -&gt; master
+INFO  Deploy done: git
+</code></pre><p>接下来呢，打开的你的浏览器，直接输入ip地址就能进入你的个人博客了。</p>
+<p>关于博客的编写什么的呢，网上的教程一大堆，你可以试着自己看看，各种小技巧，让你的博客变美，当然，这些都是题外话了</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/博客搭建/" rel="tag"># 博客搭建</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/19/做了一个梦叫长大/" rel="next" title="做了一个梦叫长大">
+                <i class="fa fa-chevron-left"></i> 做了一个梦叫长大
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/04/暑假的打算/" rel="prev" title="暑假的打算">
+                暑假的打算 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="余誉苗" />
+          <p class="site-author-name" itemprop="name">余誉苗</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录成长</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">余誉苗</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
