@@ -15,17 +15,16 @@
 
 
 
-<meta name="description" content="在linux下vi是必须熟练使用的文本编辑工具。">
-<meta name="keywords" content="学习">
+<meta name="description" content="漳州是一个很棒的地方。在这里的街头巷尾，走走停停，人间百味。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="首次接触的vim的用法">
-<meta property="og:url" content="http://yuyumiao.top/2017/06/15/首次接触的vim的用法/index.html">
+<meta property="og:title" content="好时光慢慢度过">
+<meta property="og:url" content="http://yuyumiao.top/2017/07/11/好时光慢慢度过/index.html">
 <meta property="og:site_name" content="余誉苗的个人主页">
-<meta property="og:description" content="在linux下vi是必须熟练使用的文本编辑工具。">
-<meta property="og:updated_time" content="2017-07-03T07:14:29.000Z">
+<meta property="og:description" content="漳州是一个很棒的地方。在这里的街头巷尾，走走停停，人间百味。">
+<meta property="og:updated_time" content="2017-07-11T17:05:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="首次接触的vim的用法">
-<meta name="twitter:description" content="在linux下vi是必须熟练使用的文本编辑工具。">
+<meta name="twitter:title" content="好时光慢慢度过">
+<meta name="twitter:description" content="漳州是一个很棒的地方。在这里的街头巷尾，走走停停，人间百味。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>首次接触的vim的用法 | 余誉苗的个人主页</title>
+<title>好时光慢慢度过 | 余誉苗的个人主页</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -270,11 +269,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-首次接触的vim的用法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-好时光慢慢度过" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/06/15/首次接触的vim的用法/" class="article-date">
-      <time datetime="2017-06-15T09:39:51.000Z" itemprop="datePublished">2017-06-15</time>
+      <a href="/2017/07/11/好时光慢慢度过/" class="article-date">
+      <time datetime="2017-07-11T07:46:31.000Z" itemprop="datePublished">2017-07-11</time>
 </a>
 
 
@@ -289,7 +288,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      首次接触的vim的用法
+      好时光慢慢度过
     </h1>
   
 
@@ -297,16 +296,8 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/我爱学习/">我爱学习</a>
-    </div>
-
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -314,20 +305,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>在linux下vi是必须熟练使用的文本编辑工具。<a id="more"></a> </p>
-<p>一 vi的操作模式<br>vi提供两种操作模式：输入模式（insert mode）和指令模式（command mode）。在输入模式下，用户可输入文本资料。在指令模式下，可进行删除、修改等各种编辑动作。<br>在输入模式下，按Esc键切换到指令模式下。<br>在指令模式下，按输入指令（i、a、o等）进入输入模式。 </p>
-<p>二 进入vi<br>$ vi filename<br>直接键入“vi + 所要编辑的文件名”，即可对指定的文件进行编辑。<br>如果指定的文件为新文件，则提示：“New file”，否则显示该文件的当前内容。<br>$ view filename<br>以只读方式打开文件filename </p>
-<p>三 指令模式<br>3.1 进入输入模式<br>a 在当前游标之后输入<br>A 在当前行之末输入<br>i 在当前游标之前输入<br>I 在当前行之首输入<br>o 在当前行之下新增一行，并在新增行输入<br>O 在当前行之上新增一行，并在新增行输入<br>输入结束后，按Esc键退出输入模式。 </p>
-<p>3.2 游标移动<br>h 向左移动一个字元<br>l 向右移动一个字元<br>j 向下移动一个字元<br>k 向上移动一个字元<br>b 左移一个单词，至词首<br>w 右移一个单词，至词尾<br>0 移到当前行行首<br>$ 移到当前行行尾 </p>
-<ul>
-<li>移至下一行的行首 </li>
-</ul>
-<ul>
-<li>移至上一行的行首<br>H 移至视窗的第一行<br>M 移至视窗的中间一行<br>L 移至视窗的最后一行<br>G 移至该文件的最后一行<br>nG 移至该文档的第n行<br>n+ 下移n行<br>n- 上移n行<br>3.3 视窗移动<br>? <ctrl> + f 视窗下卷一页<br>? <ctrl> + b 视窗上卷一页<br><ctrl> + d 视窗下卷半页<br><ctrl> + u 视窗上卷半页<br>? <ctrl> + e 视窗下卷一行<br>? <ctrl> + y 视窗上卷一行<br>3.4 删除操作<br>x 删除游标所在字元<br>X 删除游标前一字元<br>dw 从游标当前位置开始向后删除一个单词<br>db 从游标当前位置开始向前删除一个单词<br>d0 从行首删除至当前游标位置<br>d$ 从游标当前位置删除至行尾<br>dd 删除游标所在行<br>D 同d$<br>3.5 修改操作<br>s 修改游标所在字元，修改完成后按Esc键结束<br>S 修改整行内容，修改完成后按Esc键结束<br>r 替换当前游标所在字元<br>R 进入替换状态，直至按Esc键结束<br>cw 修改一个单词（从游标位置至词尾）<br>cb 修改一个单词（从词首至游标位置）<br>cc 修改整行内容，完成后按Esc键结束，同S<br>c0 修改行首至游标位置的内容<br>c$ 修改游标位置至行尾的内容<br>~ 游标所在字元大小写切换<br>3.6 指令重复<br>在指令模式中，可在指令前面加入一个数字n，则该指令会重复执行n次。常用的重复操作有：<br>nx 删除n个字元<br>ndd 删除n行<br>ns 修改n个字元<br>3.7 取消前一动作（Undo）<br>u 撤消上一指令的结果<br>3.8 查找字符串<br>/字符串 从当前游标向后查找该字符串<br>?字符串 从当前游标向前查找该字符串<br>n 从当前游标向后查找下一个字符串<br>N 从当前游标向前查找下一个字符串<br>3.9 查看编辑状况<br><ctrl> + g 显示正在编辑的文件名、当前游标所在行数、文件总行数、文件是否被修改 </ctrl></ctrl></ctrl></ctrl></ctrl></ctrl></ctrl></li>
-</ul>
-<p>四 保存与退出<br>:w 保存，但不退出<br>:wq 保存并退出<br>:x 同:wq<br>:q 退出，如果当前文件没有保存，禁止退出<br>:q! 不保存退出<br>:w file1 将内容保存至文件file1中，注意：此时编辑的仍为原文件<br>:w! file1 将内容覆盖保存至文件file1中，如文件file1存在，:w file1将禁止执行 </p>
-<p>五 环境设置<br>:set 显示已设置的环境状况<br>:set all 显示所有的环境设置选项<br>:set nu 显示行号<br>:set nonu 不显示行号<br>:set ts = n 设置Tab键的长度为n<br>六 执行指令<br>以下用具体的数字为例进行介绍，数字表示行数，游标所在行可用“.”代替，文件最后一行可用“$”代替。<br>: 10 , 20d 删除第10行至第20行的内容<br>:10d 删除第10行的内容<br>:%d 删除全部内容<br>: 10 , 20co30 将第10行至第20行的内容复制到第30行之后<br>: 10 , 20mo30 将第10行至第20行的内容移动到第30行之后<br>: 1 , $s/old/new 将第1行至最后一行中的old替换成new<br>: 1 , $s/^/new 将第1行至最后一行的内容前面插入new<br>: 10 将游标移至第10行<br>七 重复指令<br>. 重复上一条指令 </p>
-<p>八 切换到shell状态<br>:sh 切换到shell状态，exit返回</p>
+        <p>漳州是一个很棒的地方。在这里的街头巷尾，走走停停，人间百味。<a id="more"></a></p>
+<p>前几天老爸带我们去了漳州的老城区的一个景点。在中山公园的边上，整个地区就像一个小镇一样，中央一条河，把整块地区分割成了两块地方，一边是现代重修的景点（伪），另外一边就是真的富有时代的气息，富有生活的气息的集市。</p>
+<p>伪景点是真的一点都不能吸引我，没有什么感觉，场馆是伪造的古代的宅院，里面展出各式各样的具有文化特色的物件，大的楼房，小的手镯人偶，人偶是真的想吐槽，制作者是真的不走心，把关二爷的手做的奇短无比，显得特别萌，没有了关公的英气和霸气。这里记得的也只有关二爷了，然后是让我记忆深刻的集市，不同于景点，这里人来人往，人声鼎沸，逛着的游客，眼巴巴的店家，讨价还价的人们，熙熙攘攘的甜品店</p>
+<p>甜品店是值得特别强调一下的，这个甜品店不像是我们所见到的卖蛋糕面包的店，而是那种专门的糖果店，中式的糖果，糕点，让我想起小时候跟着爷爷去赶集的时候，路过卖糖果的店（规模没这个这么大），老远就闻着甜甜腻腻的香气眼巴巴的看着里面人进进出出，羡慕别的小孩手里的糖果，爷爷也不是不知道我喜欢吃甜的，带我去卖麦芽糖米糖的敲着锤子凿子叮叮叮响的老奶奶那里，买来一小块，不过这一小块麦芽糖可是够我吃一个上午，甜到心窝了，现在长大了，很久很久没有吃麦芽糖了，很久没有甜到心窝了，半年没有见到爷爷了。上次在南昌中山路，偶然看到有推车卖麦芽糖的老人家，想称一点带回学校，半天没有掏出一分钱，也不能用手机微信支付宝付钱，那个老人家还是拿了一个小小的熟料袋子，给我拿小锤子小凿子叮叮叮敲下一块，一回头，爷爷却不在身后，吃着糖，好想家。</p>
 
       
     </div>
@@ -336,13 +317,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/06/15/首次接触的vim的用法/">首次接触的vim的用法</a></p>
+        <p><span>本文标题:</span><a href="/2017/07/11/好时光慢慢度过/">好时光慢慢度过</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">余誉苗</a></p>
-        <p><span>发布时间:</span>2017-06-15, 17:39:51</p>
-        <p><span>最后更新:</span>2017-07-03, 15:14:29</p>
+        <p><span>发布时间:</span>2017-07-11, 15:46:31</p>
+        <p><span>最后更新:</span>2017-07-12, 01:05:45</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/06/15/首次接触的vim的用法/" title="首次接触的vim的用法">http://yuyumiao.top/2017/06/15/首次接触的vim的用法/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yuyumiao.top/2017/06/15/首次接触的vim的用法/　　作者: 余誉苗" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/07/11/好时光慢慢度过/" title="好时光慢慢度过">http://yuyumiao.top/2017/07/11/好时光慢慢度过/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yuyumiao.top/2017/07/11/好时光慢慢度过/　　作者: 余誉苗" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -354,16 +335,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/06/19/做了一个梦叫长大/">
-                    做了一个梦叫长大
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/06/15/树莓派到手/">
-                    树莓派到手
+                <a href="/2017/07/09/能及/">
+                    能力
                 </a>
             </div>
         
@@ -411,7 +386,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"首次接触的vim的用法　| 余誉苗的个人主页　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"好时光慢慢度过　| 余誉苗的个人主页　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -431,15 +406,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/06/19/做了一个梦叫长大/" title="上一篇: 做了一个梦叫长大">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/06/15/树莓派到手/" title="下一篇: 树莓派到手">
+            <a href="/2017/07/09/能及/" title="下一篇: 能力">
                 <i class="fa fa-angle-right"></i>
             </a>
         
